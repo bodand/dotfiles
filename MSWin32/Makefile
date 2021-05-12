@@ -28,7 +28,7 @@ build: ${EXECUTABLES}
 	${AHK} /in "$<" /out "$@"
 
 ## Phony rules ##
-install: install.bat
+install: build
 	echo Installing
 	for %%l in (${EXECUTABLES}) do mklink ${STARTUP_DIR}%%l "%cd%$/%%l"
 
