@@ -2,6 +2,12 @@ set nocompatible
 set belloff=all
 set encoding=utf-8
 
+if (empty(glob('~/.vim/autoload/plug.vim')))
+    silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    execute '!~/.vim/plugged/YouCompleteMe/install.py --clangd-completer'
+endif
+
 call plug#begin('~/.vim/plugged')
 " Coloring "
 Plug 'sheerun/vim-polyglot'
