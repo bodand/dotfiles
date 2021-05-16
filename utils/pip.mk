@@ -12,8 +12,8 @@
 #  MACROS
 #    WHICH_EXE --
 #      a unix which compatible executable
-#    MODULE -- string
-#      the name of the module we provide pip install support
+#    COMPONENT -- string
+#      the name of the component we provide pip install support
 #    PIP_PACKAGE -- make array
 #      the name of the packages to install
 #  
@@ -29,16 +29,16 @@
 #     the requested pip packages from pip3 or pip
 
 pip-build: pip-prebuild
-	echo "[${MODULE}] pip: nothing to build"
+	echo "[${COMPONENT}] pip: nothing to build"
 
 _PIP_ARGUMENTS = install $$pkg
 pip-install: pip-preinstall
 	for pkg in ${PIP_PACKAGE} ; do \
-		echo "[${MODULE}] pip: $$pkg.."; \
+		echo "[${COMPONENT}] pip: $$pkg.."; \
 		if which pip3 2>&1 > /dev/null; then \
 			pip3 show $$pkg || pip3 ${_PIP_ARGUMENTS}; \
 		else \
 			pip show $$pkg || pip ${_PIP_ARGUMENT}; \
 		fi; \
-		echo "[${MODULE}] pip: installed $$pkg"; \
+		echo "[${COMPONENT}] pip: installed $$pkg"; \
 	done

@@ -15,11 +15,14 @@
 
 INSTALL_FILES = ${HOME}$/.zshrc ${HOME}$/.p10k.zsh ${HOME}$/.zgen$/zgen.zsh
 
+.PHONY: build install pkg-preinstall
 build:
 	echo "[zsh.mk] nothing to build"
 
-install: ${INSTALL_FILES}
+install: pkg-install ${INSTALL_FILES}
 	echo "[zsh.mk] installed"
+
+pkg-preinstall:
 
 ${HOME}$/.zshrc: ${COMMON_DIR}$/.zshrc ${HOME}$/.p10k.zsh
 	echo "[zsh.mk] $@.."
@@ -33,3 +36,7 @@ ${HOME}$/.zgen$/zgen.zsh:
 	echo "[zsh.mk] $@.."
 	if test ! -f "$@" ; then git clone https://github.com/tarjoilija/zgen.git "${@D}" ; else cd "${@D}" && git pull --ff-only ; fi
 
+COMPONENT = zsh.mk
+PKG_PACKAGE = zsh
+PKG_MK_PATH = ../utils/pkg.mk
+include ${PKG_MK_PATH}

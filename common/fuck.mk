@@ -6,9 +6,9 @@
 #   WHICH_EXE -- in
 #   	a which executable
 
-.PHONY: build install
+.PHONY: build install pip-prebuild pip-preinstall
 
-MODULE = fuck.mk
+COMPONENT = fuck.mk
 PIP_PACKAGE = thefuck
 pip-prebuild:
 

@@ -1,0 +1,135 @@
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+ dotfiles - bodand's dotfiles
+
+=head1 SYNOPSIS
+
+ ./init.pl
+ perl init.pl
+
+=head1 DESCRIPTION
+
+This is a collection of my dotfiles which work on all systems on which I can be 
+encountered. While it is called dotfiles, it does not inherently follow the actual
+unix dotfile format, since because of Windows support it doesn't make much sense to
+name everything C<.thing>. Most things, however, are in the unix dotfile format since
+most things are expected to work on unices.
+
+=head2 Prerequisites
+
+The prerequisites are only that Perl 5 (>v5.10) and a POSIX Make is installed
+on the system (Yes, POSIX Make, no need for the ever so overcomplicated GNU
+Make), with one extra requirement, MAKE is defined by the make program to
+itself, like in the BSDs' and GNU makes.
+
+Some components have stricter requirements like python, however. These are documented
+in their respective component documentation in L<the component section|/COMPONENTS>.
+
+=head2 Installation
+
+The installation is easy if the prerequisites are met: 
+
+ perl init.pl
+
+If the system understands UNIX-like shebangs, C<./init.pl> works too.
+
+Note that since some components rely on the system package manager, or Windows PowerShell,
+the use of sudo (or equivalent) may be required, which may require entering your password,
+for that please do not leave the installation by itself. 
+
+=head2 Directory layout
+
+The directory layout may be confusing for some, or future me after forgetting
+how this thing worked: the followings describe which directory contains what.
+
+=over 2
+
+=item F<common>
+
+Contains make scripts and dotfiles which are shared across more than one
+platform. For example F<.zshrc> is used on Linux and FreeBSD.
+
+The make scripts present (F<*.mk>) are all used to install a specific component;
+which one is reflected in their name.
+
+=item F<utils>
+
+Contains utility make scripts used for multiple components, for example the vim
+and zsh components rely on F<pkg.mk> which delegates work to the appropriate
+system package manager to install their executables before actually installing
+the configurations.
+
+=item F<compat>
+
+Contains compatibility scripts, mostly because UNIX-ish tooling is not available
+on Windows, however, anything that needs to be abstracted over systems can be 
+put here as a POSIX compliant (!) shell script for unices, and batch or PowerShell
+script for Windows.
+
+=item others
+
+The other directories contain the system specific Makefiles and install tooling
+required to install the dotfiles on the system. Their name matches to what Perl
+reports in its L<$^O variable|perlvar/$^O>. These directories contain a F<Makefile>
+which is reponsible for calling all the required components' make scripts 
+recursively in their own system's directory or in F<common>.
+
+=back
+
+=head1 COMPONENTS
+
+This section describes the currently available components F<./init.pl> can install
+on a system, hopefully it is actually up to date.
+
+=over 2
+
+=item B<ahk>
+ 
+ file: ahk.mk
+ desc: AutoHotKey scripts that are compiled and then installed to auto-start
+ type: autohotkey pkg
+ on: win32
+ requires: Windows PowerShell
+
+=item B<fuck>
+
+ file: fuck.mk
+ desc: Python script to help fix mistyped commads
+ type: pip
+ on: unices
+ requires: pip3? from your local Python3 installation
+
+=item B<python3>
+
+ file: python3.mk
+ desc: Well, Python3
+ type: pkg
+ on: all
+ requires: system package manager or Windows PowerShell
+
+=item B<vim>
+
+ file: vim.mk
+ desc: The vim editor
+ sources: .vimrc
+ type: symlink pkg
+ on: all
+ requires: system package manager or Windows PowerShell
+
+=item B<zsh>
+
+ file: zsh.mk
+ desc: The Z Shell
+ sources: .zshrc .p10k.zsh
+ type: symlink pkg
+ on: unices
+ requires: system package manager
+
+=back
+
+=cut
+

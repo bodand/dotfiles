@@ -44,6 +44,8 @@ bindkey -v
 
 setopt octalzeroes
 
+export PATH="${PATH}:$HOME/.local/bin"
+
 source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved
 then
@@ -81,7 +83,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-eval $(thefuck --alias)
+
+#eval $($HOME/.local/bin/thefuck --alias)
 
 alias cls=clear
 
