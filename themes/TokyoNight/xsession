@@ -1,0 +1,11 @@
+#!/bin/sh
+
+xrdb -merge /home/bodand/.Xresources
+
+feh --no-fehbg --bg-scale /home/bodand/.config/background.jpg &
+picom -bi 0.65 --active-opacity .95 -fc --shadow-exclude "class_g = 'firefox' && argb" --shadow-exclude "class_g = 'Bar'" --opacity-rule "98:name *= 'rofi'"
+
+perl -I/home/bodand/perl5/lib/perl5 -I/home/bodand/perl5/lib/perl5/amd64-openbsd/ /home/bodand/.bar &
+
+exec i3
+

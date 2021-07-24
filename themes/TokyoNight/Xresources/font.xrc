@@ -1,0 +1,7 @@
+/* Xresources/font.xrc --
+ *
+ * Sets the font.
+ * */
+
+bodand.font.default: BlexMono NF
+

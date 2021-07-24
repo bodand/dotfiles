@@ -1,0 +1,29 @@
+font:
+  normal:
+    family: BlexMono NF
+  size: 12
+
+colors:
+  primary:
+    background: '0x20212E'
+    foreground: '0xA9B1D6'
+
+  normal:
+    black:  '0x06080A'
+    red:    '0xFF7A93'
+    green:  '0xB9F27C'
+    yellow: '0xE0AF68'
+    blue:   '0x7AA2F7'
+    purple: '0xAD8EE6'
+    cyan:   '0x515478'
+    white:  '0xA9B1D6'
+
+  bright:
+    black:  '0x515478'
+    red:    '0x803D19'
+    green:  '0x618041'
+    yellow: '0xAEC795'
+    blue:   '0x3E5380'
+    purple: '0x7C66A4'
+    cyan:   '0x5D6791'
+    white:  '0xA1A6BA'

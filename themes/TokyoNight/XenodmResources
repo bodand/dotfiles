@@ -1,0 +1,93 @@
+#define FONT BlexMono NF
+
+#define COLOR_FG  COLOR_WHITE
+#define COLOR_BG  #20212E
+#define COLOR_CUR #FAFAFA
+
+#define COLOR_BLACK      #06080A
+#define COLOR_BLACK_ALT  #515478
+#define COLOR_RED        #FF7A93
+#define COLOR_RED_ALT    #803D19
+#define COLOR_GREEN      #B9F27C
+#define COLOR_GREEN_ALT  #618041
+#define COLOR_YELLOW     #E0AF68
+#define COLOR_YELLOW_ALT #AEC795
+#define COLOR_BLUE       #7AA2F7
+#define COLOR_BLUE_ALT   #3E5380
+#define COLOR_PURPLE     #AD8EE6
+#define COLOR_PURPLE_ALT #7C66A4
+#define COLOR_CYAN       #515478
+#define COLOR_CYAN_ALT   #5D6791
+#define COLOR_WHITE      #A9B1D6
+#define COLOR_WHITE_ALT  #A1A6BA
+
+xroot.colors.background: COLOR_BG
+xroot.colors.foreground: COLOR_FG
+
+xlogin*login.translations: #override \
+	<Key>F1: set-session-argument(failsafe) finish-field()\n\
+	<Key>Left: move-backward-character()\n\
+	<Key>Right: move-forward-character()\n\
+	<Key>Home: move-to-begining()\n\
+	<Key>End: move-to-end()\n\
+	Ctrl<Key>KP_Enter: set-session-argument(failsafe) finish-field()\n\
+	<Key>KP_Enter: set-session-argument() finish-field()\n\
+	Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
+	<Key>Return: set-session-argument() finish-field()
+xlogin.Login.allowRootLogin: false
+
+xlogin*echoPasswd: true
+xlogin*echoPasswdChar: #
+
+xlogin*greeting:
+xlogin*fail:     Login incorrect or forbidden
+xlogin*Width:    400
+xlogin*x:        360
+xlogin*y:        320
+!xlogin*namePrompt: \040\040\040\040\040\040\040Login:\040
+!xlogin*passwdPrompt: Password:\040
+
+xlogin*greetFace:  FONT-22:bold:dpi=75
+xlogin*face:       FONT-16:dpi=75
+xlogin*promptFace: FONT-16:bold:dpi=75
+xlogin*failFace:   FONT-16:bold:dpi=75
+
+xlogin*background:  COLOR_BG
+xlogin*foreground:  COLOR_FG
+xlogin*failColor:   COLOR_RED
+xlogin*greetColor:  COLOR_WHITE
+xlogin*inpColor:    COLOR_BG
+xlogin*promptColor: COLOR_WHITE
+
+xlogin*hiColor:         COLOR_CYAN
+xlogin*shdColor:        COLOR_PURPLE
+xlogin*borderWidth:     0
+xlogin*frameWidth:      0
+xlogin*innerFrameWidth: 1
+xlogin*sepWidth:        0
+
+! XClock !
+xclock.dateFace: FONT-18
+xclock.dateGeom: +780+320
+xclock.dateStr:  %A, %F
+xclock.timeFace: FONT-32
+xclock.timeGeom: +780+360
+xclock.timeStr:  %H:%M:%S
+
+xclock*background:  COLOR_BG
+xclock*foreground:  COLOR_FG
+xclock*borderWidth:     0
+
+xclock*analog:     false
+xclock*chime:      false
+xclock*render:     true
+xclock*twentyfour: true
+xclock*update:     1
+
+! XMessage !
+xmessage*background:  COLOR_BG
+xmessage*foreground:  COLOR_FG
+xmessage*borderWidth: 0
+
+xmessage*message.scroll*: Never
+xmessage*timeout:         0

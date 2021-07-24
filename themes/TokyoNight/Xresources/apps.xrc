@@ -1,0 +1,15 @@
+/* Xresources/apps.xrc --
+ *
+ * Conteins the entries of applications that can be
+ * referred to from other places.
+ *
+ * They reside in the "<user>.apps" namespace.
+ * */
+
+#include "bins.xrc"
+
+bodand.apps.terminal: CARGO_BIN/alacritty
+bodand.apps.shell: LOCAL_BIN/zsh
+bodand.apps.browser: LOCAL_BIN/firefox
+bodand.apps.dmenu: LOCAL_BIN/rofi -modi drun,run -show drun -theme tokyonight
+bodand.apps.power: LOCAL_BIN/rofi -modi power:$HOME/.config/rofi/power.pl -show power -theme tokyonight

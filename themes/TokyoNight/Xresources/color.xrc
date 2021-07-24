@@ -1,0 +1,72 @@
+/* Xresources/colors.xrc --
+ *
+ * This file contains the color definitions. They are available as preprocessor
+ * macros and under the "<user>.color" namespace.
+ * */
+
+#define COLOR_FG  COLOR_WHITE
+#define COLOR_BG  #20212E
+#define COLOR_CUR #FAFAFA
+
+#define COLOR_BLACK      #06080A
+#define COLOR_BLACK_ALT  #515478
+#define COLOR_RED        #FF7A93
+#define COLOR_RED_ALT    #803D19
+#define COLOR_GREEN      #B9F27C
+#define COLOR_GREEN_ALT  #618041
+#define COLOR_YELLOW     #E0AF68
+#define COLOR_YELLOW_ALT #AEC795
+#define COLOR_BLUE       #7AA2F7
+#define COLOR_BLUE_ALT   #3E5380
+#define COLOR_PURPLE     #AD8EE6
+#define COLOR_PURPLE_ALT #7C66A4
+#define COLOR_CYAN       #515478
+#define COLOR_CYAN_ALT   #5D6791
+#define COLOR_WHITE      #A9B1D6
+#define COLOR_WHITE_ALT  #A1A6BA
+
+#define DCOLOR(name, value) \
+    bodand.color.name: COLOR_##value
+
+DCOLOR(black, BLACK)
+DCOLOR(black.alt, BLACK_ALT)
+DCOLOR(red, RED)
+DCOLOR(red.alt, RED_ALT)
+DCOLOR(green, GREEN)
+DCOLOR(green.alt, GREEN_ALT)
+DCOLOR(yellow, YELLOW)
+DCOLOR(yellow.alt, YELLOW_ALT)
+DCOLOR(blue, BLUE)
+DCOLOR(blue.alt, BLUE_ALT)
+DCOLOR(purple, PURPLE)
+DCOLOR(purple.alt, PURPLE_ALT)
+DCOLOR(cyan, CYAN)
+DCOLOR(cyan.alt, CYAN_ALT)
+DCOLOR(white, WHITE)
+DCOLOR(white.alt, WHITE_ALT)
+
+#undef DCOLOR
+#define DCOLOR(i, value) \
+    *.color##i: COLOR_##value
+
+*.foreground: COLOR_FG
+*.background: COLOR_BG
+*.cursorColor: COLOR_CUR
+DCOLOR(0, BLACK)
+DCOLOR(8, BLACK_ALT)
+DCOLOR(1, RED)
+DCOLOR(9, RED_ALT)
+DCOLOR(2, GREEN)
+DCOLOR(10, GREEN_ALT)
+DCOLOR(3, YELLOW)
+DCOLOR(11, YELLOW_ALT)
+DCOLOR(4, BLUE)
+DCOLOR(12, BLUE_ALT)
+DCOLOR(5, PURPLE)
+DCOLOR(13, PURPLE_ALT)
+DCOLOR(6, CYAN)
+DCOLOR(14, CYAN_ALT)
+DCOLOR(7, WHITE)
+DCOLOR(15, WHITE_ALT)
+
+#undef DCOLOR

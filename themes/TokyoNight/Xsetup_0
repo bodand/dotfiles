@@ -1,0 +1,17 @@
+#!/bin/sh
+xrandr --output default --mode 1920x1080
+
+xset +fp /usr/local/share/fonts/Blex
+
+XRSC=$(xrdb -query)
+
+/usr/local/bin/feh --bg-scale  /usr/local/share/rice-pics/TokyoNight.xlogin.jpg &
+
+for type in 'time' 'date'
+do
+    FACE=$(echo "$XRSC" | perl -a -F':\s+' -ne "print \$F[1] if \$F[0] eq q/xclock.${type}Face/")
+    GEO=$(echo "$XRSC" | perl -a -F':\s+' -ne "print \$F[1] if \$F[0] eq q/xclock.${type}Geom/")
+    FMT=$(echo "$XRSC" | perl -a -F':\s+' -ne "print \$F[1] if \$F[0] eq q/xclock.${type}Str/")
+
+    xclock -face "$FACE" -geometry "$GEO" -strftime "$FMT" &
+done

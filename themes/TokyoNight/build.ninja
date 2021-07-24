@@ -1,0 +1,5 @@
+rule xrpp
+    command = xrdb -E -cpp "cc -E -" $in | grep -v "^#" > $out
+
+build Xresources.done: xrpp Xresources.pp | Xresources/apps.xrc Xresources/color.xrc Xresources/font.xrc
+

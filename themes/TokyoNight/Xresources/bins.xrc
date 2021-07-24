@@ -1,0 +1,22 @@
+/* Xresources/bins.xrc --
+ *
+ * Defines a set of preprocessor macros
+ * that provide the different directories
+ * in which executables reside.
+ * */
+
+
+/* CARGO_BIN --
+ * 
+ * Directories containing a list of 
+ * Rust binaries installed using cargo.
+ * */
+#define CARGO_BIN $HOME/.cargo/bin
+
+
+/* LOCAL_BIN --
+ *
+ * /usr/local/bin - The standard user
+ * installed executable directory.
+ * */
+#define LOCAL_BIN /usr/local/bin

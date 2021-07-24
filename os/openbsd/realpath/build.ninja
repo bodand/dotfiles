@@ -1,0 +1,17 @@
+builddir = _Build
+
+rule cxx
+    command = c++ -c -o $out -std=c++17 $in
+
+rule link
+    command = c++ -o $out $in
+
+rule install
+    command = install -c -s -m 0755 $in $out
+
+build realpath.cxx.o: cxx realpath.cxx
+build realpath: link realpath.cxx.o
+
+build build: phony realpath
+build install: phony /usr/local/bin/realpath
+build /usr/local/bin/realpath: install realpath

@@ -1,0 +1,68 @@
+cc -E -   -DHOST=bodsd2.isdevnet.com -DSERVERHOST=bodsd2.isdevnet.com -DSRVR_bodsd2_isdevnet_com -DDISPLAY_NUM=0 -DCLIENTHOST=bodsd2.isdevnet.com -DCLNT_bodsd2_isdevnet_com -DVERSION=11 -DREVISION=0 -DVENDOR="The X.Org Foundation" -DVNDR_The_X_Org_Foundation -DRELEASE=12010000 -DNUM_SCREENS=1 -DEXT_DRI2 -DEXT_XFree86_DGA -DEXT_XFree86_VidModeExtension -DEXT_GLX -DEXT_XVideo -DEXT_X_Resource -DEXT_Present -DEXT_RECORD -DEXT_DOUBLE_BUFFER -DEXT_MIT_SCREEN_SAVER -DEXT_DAMAGE -DEXT_Composite -DEXT_XINERAMA -DEXT_RANDR -DEXT_RENDER -DEXT_XFIXES -DEXT_SECURITY -DEXT_XC_MISC -DEXT_XKEYBOARD -DEXT_SYNC -DEXT_BIG_REQUESTS -DEXT_XTEST -DEXT_XInputExtension -DEXT_MIT_SHM -DEXT_SHAPE -DEXT_Generic_Event_Extension -DEXT_VMWARE_CTRL -DSCREEN_NUM=0 -DWIDTH=1920 -DHEIGHT=1080 -DX_RESOLUTION=3780 -DY_RESOLUTION=3776 -DPLANES=24 -DBITS_PER_RGB=8 -DCLASS="TrueColor" -DCLASS_TrueColor=33 -DCOLOR -DCLASS_TrueColor_24=33 -DCLASS_DirectColor_24=755 -DCLASS_TrueColor_32=65 Xresources.pp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bodand.apps.terminal: $HOME/.cargo/bin/alacritty
+bodand.apps.shell: /usr/local/bin/zsh
+bodand.apps.browser: /usr/local/bin/firefox
+bodand.apps.dmenu: /usr/local/bin/rofi -modi drun,run -show drun -theme tokyonight
+bodand.apps.power: /usr/local/bin/rofi -modi power:$HOME/.config/rofi/power.pl -show power -theme tokyonight
+bodand.color.black: #06080A
+bodand.color.black.alt: #515478
+bodand.color.red: #FF7A93
+bodand.color.red.alt: #803D19
+bodand.color.green: #B9F27C
+bodand.color.green.alt: #618041
+bodand.color.yellow: #E0AF68
+bodand.color.yellow.alt: #AEC795
+bodand.color.blue: #7AA2F7
+bodand.color.blue.alt: #3E5380
+bodand.color.purple: #AD8EE6
+bodand.color.purple.alt: #7C66A4
+bodand.color.cyan: #515478
+bodand.color.cyan.alt: #5D6791
+bodand.color.white: #A9B1D6
+bodand.color.white.alt: #A1A6BA
+
+
+
+
+
+*.foreground: #A9B1D6
+*.background: #20212E
+*.cursorColor: #FAFAFA
+*.color0: #06080A
+*.color8: #515478
+*.color1: #FF7A93
+*.color9: #803D19
+*.color2: #B9F27C
+*.color10: #618041
+*.color3: #E0AF68
+*.color11: #AEC795
+*.color4: #7AA2F7
+*.color12: #3E5380
+*.color5: #AD8EE6
+*.color13: #7C66A4
+*.color6: #515478
+*.color14: #5D6791
+*.color7: #A9B1D6
+*.color15: #A1A6BA
+
+
+
+
+
+bodand.font.default: BlexMono NF
+

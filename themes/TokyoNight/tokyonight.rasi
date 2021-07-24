@@ -1,0 +1,134 @@
+configuration {
+    show-icons: false;
+}
+
+* {
+    active-bg:   @purple;
+    active-fg:   @bg;
+    normal-bg:   @bg;
+    normal-fg:   @fg;
+    urgent-bg:   @red;
+    urgent-fg:   @bg;
+
+    red:     #FF7A93;
+    green:   #B9F27C;
+    purple:  #AD8EE6;
+    cyan:    #515478;
+    white:   #A9B1D6;
+    white-2: #A1A6BA;
+
+    bg: #20212E;
+    fg: #A9B1D6;
+
+    background-color: @bg;
+    font: "BlexMono NF 14";
+}
+
+#window {
+    background-color: @bg;
+    border: 0;
+    padding: 0;
+    height: 20%;
+}
+
+#mainbox {
+    border: 0;
+    padding: 0;
+}
+
+#message {
+    border: 2px 0 0;
+    border-color: @green;
+    padding: 2px;
+}
+
+#textbox {
+    text-color: @fg;
+}
+
+#inputbar {
+    children: [prompt, textbox-prompt-colon, entry];
+    spacing: 0;
+    text-color: @fg;
+}
+
+#prompt {
+    padding: 4px;
+    background-color: @purple;
+    text-color: @bg;
+}
+
+#entry {
+    padding: 2px 0 0 0;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+#textbox-prompt-colon {
+    font: "BlexMono NF 19";
+    expand: false;
+    str: "";
+    padding: 0 6px 6px 0;
+    text-color: @purple;
+    background-color: @bg;
+}
+
+#listview {
+    fixed-height: 0; 
+    scrollbar: false;
+    background-color: @bg;
+    padding: 2px 0 0;
+}
+
+#element {
+    border: 0;
+    padding: 2px;
+}
+
+#element.normal.normal {
+    background-color: @normal-bg;
+    text-color: @normal-fg;
+}
+#element.normal.urgent {
+    background-color: @urgent-bg;
+    text-color: @urgent-fg;
+}
+#element.normal.active {
+    background-color: @active-bg;
+    text-color: @active-fg;
+}
+
+#element.alternate.normal {
+    background-color: @normal-bg;
+    text-color: @normal-fg;
+}
+#element.alternate.urgent {
+    background-color: @urgent-bg;
+    text-color: @urgent-fg;
+}
+#element.alternate.active {
+    background-color: @active-bg;
+    text-color: @active-fg;
+}
+
+#element.selected.normal {
+    background-color: @cyan;
+    text-color: @green;
+}
+#element.selected.urgent {
+    background-color: @urgent-bg;
+    text-color: @fg;
+}
+#element.selected.active {
+    background-color: @cyan;
+    text-color: @green;
+}
+
+#button {
+    text-color: @fg;
+}
+
+#button.selected {
+    text-color: @bg;
+    background-color: @purple;
+}
